@@ -2,9 +2,6 @@ from numpy.core.fromnumeric import resize
 import torch
 import torchvision
 import torchvision.transforms as transforms
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.model_selection import KFold
 from torch.utils.data import DataLoader, ConcatDataset
 from torch import nn
 import torch.nn.functional as F
