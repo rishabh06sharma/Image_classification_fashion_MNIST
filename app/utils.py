@@ -35,7 +35,7 @@ class net(nn.Module):
 
 model=net()
 PATH="models/model-fold-9.pth" # model directory
-model.load_state_dict(torch.load(PATH))
+model.load_state_dict(torch.load(PATH,map_location='cpu'))
 
 def image_transform(image):
     transform=transforms.Compose([transforms.Grayscale(num_output_channels=1),
