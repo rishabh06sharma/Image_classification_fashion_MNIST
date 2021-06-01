@@ -20,9 +20,6 @@ future==0.18.2
 gunicorn==20.1.0
 ImageHash==4.2.0
 imageio==2.9.0
-importlib==1.0.4
-importlib-metadata==4.4.0
-importlib-resources==3.0.0
 ipykernel==5.5.5
 ipython==7.16.1
 ipython-genutils==0.2.0
