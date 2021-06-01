@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from utils import predict_it, image_transform
+from app.utils import predict_it, image_transform
 application=Flask(__name__)
 image_extensions={"png","jpg","jpeg"}
 

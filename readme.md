@@ -4,7 +4,8 @@ CNN with k-fold cross validation <br />
 Requirements
 * Pytorch <br /> 
 * Flask <br /> 
-* Requests <br /> 
+* Requests <br />
+* gunicorn <br /> 
 
 Setup environment variables (replace set with export in linux) <br /> 
 ```python
