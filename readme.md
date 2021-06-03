@@ -1,4 +1,4 @@
-## Fashion MNIST
+## Fashion MNIST - Web app
 This repository is web API for Images classfication of fashion mnist dataset with implementation (Training and app files)<br /> 
 
 ## Dataset Sample
