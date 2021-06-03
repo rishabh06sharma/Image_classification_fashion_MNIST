@@ -7,6 +7,7 @@ image_extensions={"png","jpg","jpeg"}
 def file_list(file):
     return "." in file and file.rsplit(".",1)[1].lower()
 
+# dictionary of fashion MNIST class
 clothes_class={0:"T-shirt/top",
 1 :"Trouser",
 2 :"Pullover",
@@ -18,6 +19,7 @@ clothes_class={0:"T-shirt/top",
 8 :"Bag",
 9 :"Ankle boot"}
 
+# prediction function
 @application.route("/predict_class",methods=["POST"])
 def predict_class():
     if request.method=="POST":
@@ -31,6 +33,7 @@ def predict_class():
         if not file_list(file.filename):
             return jsonify({"Error":"Format not supported"})
 
+        # Prediction
         try:
             image=file.read()
             tensor=image_transform(image)

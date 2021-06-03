@@ -9,7 +9,7 @@ from PIL import Image
 from torchvision.transforms.transforms import Grayscale, Resize
 import io
 
-## load the model
+## model structure
 class net(nn.Module):
     def __init__(self):
         super().__init__()
@@ -30,18 +30,20 @@ class net(nn.Module):
     def forward(self,t):
         return self.layers(t)
 
+# load the model
 model=net()
 PATH="models/model-fold-9.pth" # model directory
 model.load_state_dict(torch.load(PATH,map_location='cpu'))
 
+# transform inage into tensor
 def image_transform(image):
     transform=transforms.Compose([transforms.Grayscale(num_output_channels=1),
                                 transforms.Resize((28,28)), transforms.ToTensor()])
     image=Image.open(io.BytesIO(image))
     return transform(image).unsqueeze(0) #one sample
 
+# prediction function
 def predict_it(image):
-    # inputs, targets = inputs.to(device), targets.to(device)
     output=model(image)
     _, predicted = torch.max(output.data, 1)
     return predicted
